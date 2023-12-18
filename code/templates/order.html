@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Order {% endblock %}
+
+{% block container %}
+    <h1 align="center" style="color: Blue; font-size: 2em">Order</h1>
+
+    {% for pp in pps %}
+
+        <div align="center" style="color: black; font-size: 1.5em">
+        <form action="{{ url_for('delorder') }}" class="deleteform" method="post">
+            <img src="static/img/menu/{{ pp[3] }}" width="20%"  alt={{ pp[1] }}>
+            <br>
+            {{ pp[1] }}
+            <br>
+            <b>Price: {{ pp[2] }} $</b>
+            <p style="color: green;">Number of units: {{ pp[4] }} {{ form.delproductsubmit() }}</p>
+            <input name="id_product" type="hidden" value={{ pp[0] }}>
+
+        </form>
+        <br>
+        </div>
+
+    {% endfor %}
+
+    <div id="line_block">
+    <div>
+        <form action="{{ url_for('menu') }}" method="post">
+            {{ form.gotomenusubmit() }}
+        </form>
+    </div>
+
+    <div>
+        <form action="{{ url_for('orderinfo') }}" method="post">
+            {{ form.gotoorderinfosubmit() }}
+        </form>
+    </div>
+
+    </div>
+
+
+{% endblock %}

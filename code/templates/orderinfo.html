@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %} Order {% endblock %}
+
+{% block container %}
+    <h1 align="center" style="color: Blue; font-size: 2em">Order Form</h1>
+    <div style="background-color: white; width: 800px; margin: auto; ">
+      <form action = "{{ url_for('saveorder') }}" method = post>
+
+                <div id="line_block_orderinfo">
+               <div style="width: 150px;">{{ form.orderfirstname.label }}</div>
+               <div>{{ form.orderfirstname }}</div>
+
+                    {% for message in form.orderfirstname.errors %}
+                    <div style="color:red; width: 250px; text-align:left;">{{ message }}</div>
+                    {% endfor %}
+                </div>
+
+                <div id="line_block_orderinfo">
+               <div style="width: 150px;">{{ form.orderlastname.label }}</div>
+               <div>{{ form.orderlastname }}</div>
+
+                    {% for message in form.orderlastname.errors %}
+                        <div style="color:red; width: 250px; text-align:left;">{{ message }}</div>
+                    {% endfor %}
+
+                </div>
+
+          <div id="line_block_orderinfo">
+
+               <div style="width: 150px;">{{ form.orderemail.label }}</div>
+               <div>{{ form.orderemail }}</div>
+          {% for message in form.orderemail.errors %}
+              <div style="color:red; width: 250px; text-align:left;">{{ message }}</div>
+          {% endfor %}
+          </div>
+
+
+
+          <div id="line_block_orderinfo">
+               <div style="width: 150px;">{{ form.orderphone.label }}</div>
+               <div>{{ form.orderphone }}</div>
+           {% for message in form.orderphone.errors %}
+              <div style="color:red; width: 250px; text-align:left;">{{ message }}</div>
+          {% endfor %}
+
+                </div>
+
+
+
+
+
+                        <div id="line_block_orderinfo">
+               <div style="width: 150px; ">{{ form.city.label }}</div>
+               <div>{{ form.city }}</div>
+              <div style="width: 250px;"></div>
+                        </div>
+
+
+          <div id="line_block_orderinfo">
+               <div style="width: 150px;">{{ form.address.label }}</div>
+               <div>{{ form.address }}</div>
+          {% for message in form.address.errors %}
+              <div style="color:red; width: 250px;">{{ message }}</div>
+          {% endfor %}
+
+        </div>
+
+                <div id="line_block_orderinfo">
+               <div style="width: 150px;">{{ form.deliveryservise.label }}</div>
+               <div>{{ form.deliveryservise }}</div>
+              <div style="width: 250px;"></div>
+</div>
+
+                    <div id="line_block_orderinfo">
+               <div style="width: 150px;">{{ form.paymethod.label }}</div>
+               <div>{{ form.paymethod }}</div>
+                  <div style="width: 250px;"></div>
+            </div>
+
+          <div id="line_block_orderinfo">
+               <div>{{ form.ordersubmit }}</div>
+</div>
+
+
+      </form>
+</div>
+
+
+{% endblock %}

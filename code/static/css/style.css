@@ -1,0 +1,98 @@
+html, body {
+        height: 100%;
+}
+
+body   { font-family: sans-serif;
+         background: white;
+         text-align="center";
+         display: block;
+         margin: 8px;
+ }
+
+div {
+        border: 1px solid #fff;
+        margin:10px;
+        text-align: center;
+        width: auto;
+
+}
+
+#line_block {
+        width: auto;
+        height: 150px;
+        overflow: hidden;
+        margin: 5px;
+}
+
+#line_block>div{
+        width: 200px;
+        height: 120px;
+        display: inline-block;
+}
+
+#line_block_orderinfo {
+        width: auto;
+        overflow: hidden;
+
+}
+
+#line_block_orderinfo  input {
+    font-size: 18px;
+    text-align: left;
+
+}
+
+
+
+#line_block_orderinfo  label {
+    font-size: 18px;
+    align: left;
+
+}
+
+#line_block_orderinfo  div {
+        height: auto;
+        text-align: left;
+        display: inline-block;
+}
+
+
+input {
+font-size: 18px;
+text-align: center;
+}
+
+.deleteform input {
+color: red;
+}
+
+#nav nav {
+    margin-top: 5px;
+    background: white;
+}
+
+#nav nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+        font-size: 22px;
+}
+
+#nav nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#nav nav a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#topsider img {
+  max-width: 100%;
+  height: auto;
+}
+

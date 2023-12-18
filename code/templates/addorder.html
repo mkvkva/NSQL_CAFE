@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} Add product to Order {% endblock %}
+
+{% block container %}
+
+<h1 align="center" style="color: Blue; font-size: 2em">{{ result }}</h1>
+        <br>
+        <div align="center" style="color: black; font-size: 1.5em">
+            <img src="static/img/menu/{{ addproduct[3] }}" width="20%"  alt={{ addproduct[1] }}>
+            <br>
+            {{ addproduct[1] }}
+            <br>
+            <b>Price: {{ addproduct[2] }} $</b>
+            <p style="color: green;">Number of units: {{ countproduct }}</p>
+            <br>
+        </div>
+
+    <div id="line_block">
+    <div>
+        <form action="{{ url_for('menu') }}" method="post">
+            {{ AddOrderForms.gotomenusubmit() }}
+        </form>
+    </div>
+
+    <div>
+        <form action="{{ url_for('order') }}" method="post">
+            {{ AddOrderForms.gotoordersubmit() }}
+        </form>
+    </div>
+
+    </div>
+
+{% endblock %}

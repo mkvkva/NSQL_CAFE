@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Cafe {% block title %} {% endblock %}</title>
+  </head>
+  <body>
+
+    <div id="nav">
+        <div align="center" style="color: Black; font-size: 2em">
+        <img src="static/img/logo.png" alt="Logotype my site" width="50" height="50">
+        </div>
+       <div>
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ url_for('index') }}">News</a>
+            </li>
+            <li>
+                <a href="{{ url_for('menu') }}">Menu</a>
+            </li>
+            <li>
+                <a href="{{ url_for('reservation') }}">Reservation</a>
+            </li>
+            <li>
+                <a href="{{ url_for('order') }}">Order</a>
+            </li>
+
+        </ul>
+    </nav>
+       </div>
+    <hr>
+    </div>
+
+    <div id="topsider">
+        {% block topsider %} {% endblock %}
+    </div>
+
+    <div id="container">
+        {% block container %} {% endblock %}
+    </div>
+
+      <div id="footer">
+        {% block footer %} {% endblock %}
+    </div>
+
+  </body>
+</html>

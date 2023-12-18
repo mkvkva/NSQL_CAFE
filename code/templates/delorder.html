@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Delete product from Order {% endblock %}
+
+{% block container %}
+
+<h1 align="center" style="color: Blue; font-size: 2em">{{ result }}</h1>
+        <br>
+        <div align="center" style="color: black; font-size: 1.5em">
+            <img src="static/img/menu/{{ delproduct[3] }}" width="20%"  alt={{ delproduct[1] }}>
+            <br>
+            {{ delproduct[1] }}
+            <br>
+            <b>Price: {{ delproduct[2] }} $</b>
+        <br>
+        </div>
+
+    <div id="line_block">
+    <div>
+        <form action="{{ url_for('menu') }}" method="post">
+            {{ DelOrderForms.gotomenusubmit() }}
+        </form>
+    </div>
+
+    <div>
+        <form action="{{ url_for('order') }}" method="post">
+            {{ DelOrderForms.gotoordersubmit() }}
+        </form>
+    </div>
+
+    </div>
+
+{% endblock %}

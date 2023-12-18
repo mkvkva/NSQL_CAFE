@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} menu {% endblock %}
+{% block container %}
+    <h1 align="center" style="color: Blue; font-size: 2em">Menu</h1>
+
+    {% for menu in menus %}
+        <div align="center" style="color: black; font-size: 1.5em">
+        <form action="{{ url_for('addorder') }}" method="post">
+
+            <img src="static/img/menu/{{ menu[3] }}" width="20%"  alt={{ menu[1] }}>
+            <br>
+            {{ menu[1] }}
+            <br>
+            <b>Price: {{ menu[2] }} $</b>
+            <p>{{ fmenus.count(size=5, maxlength=1, min=1, max=9) }} {{ fmenus.menusubmit() }}</p>
+            <input name="id_product" type="hidden" value={{ menu[0] }}>
+        </form>
+        <br>
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

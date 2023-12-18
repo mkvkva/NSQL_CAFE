@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} Rezervace {% endblock %}
+
+{% block container %}
+      {% for message in form.lastname.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+      {% for message in form.email.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+      <form action = "http://localhost:5000/contact" method = post>
+         <fieldset>
+            <legend>Rezervační formulář</legend>
+            {{ form.hidden_tag }}
+
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.firstname.label }}<br>
+               {{ form.firstname }}
+               <br>
+
+               {{ form.lastname.label }}<br>
+               {{ form.lastname }}
+               <br>
+
+               {{ form.phone.label }}<br>
+               {{ form.phone}}
+               <br>
+
+               {{ form.guest.label }}<br>
+               {{ form.guest}}
+               <br>
+
+               {{ form.email.label }}<br>
+               {{ form.email }}
+               <br>
+
+               <br>
+               {{ form.submit }}
+            </div>
+         </fieldset>
+      </form>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Save order in mongodb {% endblock %}
+
+{% block container %}
+
+<h1 align="center" style="color: Blue; font-size: 2em"> Сохранение </h1>
+
+
+    <div id="line_block">
+    <div>
+        <form action="{{ url_for('menu') }}" method="post">
+            {{ form.gotomenusubmit() }}
+        </form>
+    </div>
+
+    <div>
+        <form action="{{ url_for('order') }}" method="post">
+            {{ form.gotoordersubmit() }}
+        </form>
+    </div>
+
+    </div>
+
+{% endblock %}
