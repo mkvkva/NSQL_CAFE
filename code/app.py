@@ -42,29 +42,49 @@ products = db.Table('products', metadata,
                     )
 
 
+#metadata.create_all(engine)
+
+#insertion_query = products.insert().values([
+#    {'name': 'Coffee "Coffee "Americano" classic, 230 ml', 'price': 35,
+#     'img': 'CoffeeAmericanoLarge product-header-desktop.jpg'},
+#    {'name': 'Coffee "Americano with milk" classic 275 ml', 'price': 44,
+#     'img': 'CoffeeAmericanoWithMilkMedium product-header-desktop'},
+#    {'name': 'Coffee "Coffee "Cappuccino" classic 245 ml', 'price': 30,
+#     'img': 'CoffeeCapuccinoLarge product-header-desktop.jpg'},
+#    {'name': 'Coffee "Latte" classic 295 ml', 'price': 35, 'img': 'CoffeeLatteLarge product-header-desktop.jpg'},
+#    {'name': 'Coffee "Flat White" 155 ml', 'price': 30, 'img': 'CoffeeFlatWhite product-header-desktop.jpg'},
+#    {'name': 'Mocha classic, 295 ml', 'price': 35, 'img': 'McC_CoffeeMoccoClassic product-header-desktop.jpg'},
+#    {'name': 'Latte Brownie, 300 ml', 'price': 40, 'img': 'Drink_Brownie_Latte product-header-desktop.jpg'},
+#    {'name': 'Cocoa classic, 300 ml', 'price': 30, 'img': 'CocoaMedium product-header-desktop.jpg'},
+#    {'name': 'Coca-Cola® mala 250 ml', 'price': 45, 'img': 'Cola_250ml product-header-desktop.jpg'},
+#    {'name': 'Fanta® is small, 250 ml', 'price': 45, 'img': 'Fanta_250ml product-header-desktop.jpg'},
+#    {'name': 'Sprite® is small, 250 ml', 'price': 20, 'img': 'Sprite_250ml product-header-desktop.jpg'},
+#    {'name': 'Orange juice is small, 300 ml', 'price': 30, 'img': 'JuiceOrangeSmall product-header-desktop.jpg'},
+#    {'name': 'Green tea with citrus fruits, 300 ml', 'price': 10, 'img': 'TeaGreen product-header-desktop.jpg'}
+#])
+
+#conn.execute(insertion_query)
+#conn.commit()
+
+news = db.Table('news', metadata,
+                    db.Column('id', db.Integer, primary_key=True),
+                    db.Column('title', db.String),
+                    db.Column('text', db.Integer),
+                    db.Column('img', db.String)
+                    )
+
+
 metadata.create_all(engine)
 
-insertion_query = products.insert().values([
-    {'name': 'Coffee "Coffee "Americano" classic, 230 ml', 'price': 35,
-     'img': 'CoffeeAmericanoLarge product-header-desktop.jpg'},
-    {'name': 'Coffee "Americano with milk" classic 275 ml', 'price': 44,
-     'img': 'CoffeeAmericanoWithMilkMedium product-header-desktop'},
-    {'name': 'Coffee "Coffee "Cappuccino" classic 245 ml', 'price': 30,
-     'img': 'CoffeeCapuccinoLarge product-header-desktop.jpg'},
-    {'name': 'Coffee "Latte" classic 295 ml', 'price': 35, 'img': 'CoffeeLatteLarge product-header-desktop.jpg'},
-    {'name': 'Coffee "Flat White" 155 ml', 'price': 30, 'img': 'CoffeeFlatWhite product-header-desktop.jpg'},
-    {'name': 'Mocha classic, 295 ml', 'price': 35, 'img': 'McC_CoffeeMoccoClassic product-header-desktop.jpg'},
-    {'name': 'Latte Brownie, 300 ml', 'price': 40, 'img': 'Drink_Brownie_Latte product-header-desktop.jpg'},
-    {'name': 'Cocoa classic, 300 ml', 'price': 30, 'img': 'CocoaMedium product-header-desktop.jpg'},
-    {'name': 'Coca-Cola® mala 250 ml', 'price': 45, 'img': 'Cola_250ml product-header-desktop.jpg'},
-    {'name': 'Fanta® is small, 250 ml', 'price': 45, 'img': 'Fanta_250ml product-header-desktop.jpg'},
-    {'name': 'Sprite® is small, 250 ml', 'price': 20, 'img': 'Sprite_250ml product-header-desktop.jpg'},
-    {'name': 'Orange juice is small, 300 ml', 'price': 30, 'img': 'JuiceOrangeSmall product-header-desktop.jpg'},
-    {'name': 'Green tea with citrus fruits, 300 ml', 'price': 10, 'img': 'TeaGreen product-header-desktop.jpg'}
-])
+#insertion_query = news.insert().values([
+#    {'title': 'Lecture about aliens philosophy', 'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet viverra augue. Nulla consectetur velit urna, sit amet porta massa ornare sed. Nulla egestas pretium nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vel maximus velit. Aenean ac mauris non enim mattis vehicula. Vivamus posuere eleifend nunc sed euismod.Integer feugiat nulla a libero scelerisque gravida. Mauris vel eros est. Morbi facilisis, tortor pellentesque congue porttitor, diam nisl tincidunt orci, vel hendrerit justo magna ut dolor. Praesent luctus efficitur sapien, sit amet venenatis ligula. Nullam feugiat felis pulvinar, ultrices tortor sit amet, pulvinar velit. Pellentesque tempor tellus vel nibh pharetra, non luctus dui malesuada. Nulla a tincidunt ante, a pretium tellus. Suspendisse venenatis urna pellentesque odio tristique bibendum. Curabitur lobortis at odio vel luctus. Sed quis purus interdum, hendrerit metus sed, pharetra lectus. Quisque tempus orci sed quam aliquam, non commodo turpis venenatis.',
+#     'img': 'novyna1.jpg'},
+#    {'title': 'Shipnado', 'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet viverra augue.Nulla consectetur velit urna, sit amet porta massa ornare sed. Nulla egestas pretium nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vel maximus velit. Aenean ac mauris non enim mattis vehicula. Vivamus posuere eleifend nunc sed euismod.Integer feugiat nulla a libero scelerisque gravida. Mauris vel eros est. Morbi facilisis, tortor pellentesque congue porttitor, diam nisl tincidunt orci, vel hendrerit justo magna ut dolor. Praesent luctus efficitur sapien, sit amet venenatis ligula. Nullam feugiat felis pulvinar, ultrices tortor sit amet, pulvinar velit. Pellentesque tempor tellus vel nibh pharetra, non luctus dui malesuada. Nulla a tincidunt ante, a pretium tellus. Suspendisse venenatis urna pellentesque odio tristique bibendum. Curabitur lobortis at odio vel luctus. Sed quis purus interdum, hendrerit metus sed, pharetra lectus. Quisque tempus orci sed quam aliquam, non commodo turpis',
+#     'img': 'novyna2.jpg'}
+#])
 
-conn.execute(insertion_query)
-conn.commit()
+#conn.execute(insertion_query)
+#conn.commit()
 
 
 def get_db_connection_mongo():
@@ -74,9 +94,10 @@ def get_db_connection_mongo():
 
 
 @app.route('/')
-def index():  # put application's code here
-    pass
-    return render_template('index.html')
+def index():
+    select_all_queryn = db.select(news)
+    newss = conn.execute(select_all_queryn)
+    return render_template('index.html', newss=newss)
 
 
 @app.route("/order", methods=['GET', 'POST'])
@@ -219,12 +240,27 @@ def saveorder():
 @app.route("/reservation", methods=["GET", "POST"])
 def reservation():
     form = ReservationForm()
+
     if request.method == 'POST':
+        client = get_db_connection_mongo()
+        db_mongo = client['Cafe']
+        reservation_collection = db_mongo['reservations']
+
         if form.validate() == False:
             flash('Všechna pole jsou povinná')
             return render_template('reservation.html', form=form)
         else:
-            return render_template('confreservation.html')
+            reservation_list = {
+                'first_name': form.firstname.data,
+                'last_name': form.lastname.data,
+                'phone_number': form.phone.data,
+                'email': form.email.data,
+                'guests': form.guest.data,
+            }
+            reservation_collection.insert_one(reservation_list)
+            client.close()
+        return render_template('conf.html')
+
     elif request.method == 'GET':
         return render_template('reservation.html', form=form)
 
